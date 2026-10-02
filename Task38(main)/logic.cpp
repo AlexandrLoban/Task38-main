@@ -1,15 +1,15 @@
 #include "logic.h" 
+
 bool is_palindrome(int number) {
-    if (number < 0) {
-        number = -number;
+    if (number <= 0) {
+        return false;
     }
     if (number <= 9) {
-        return false;
+        return true;
     }
 
     int reverse = 0;
     int number_default = number;
-    int count = 0;
 
     while (number > 0) {
        
@@ -17,6 +17,5 @@ bool is_palindrome(int number) {
         number /= 10; 
     }
 
-    reverse *= pow(10, count);
     return reverse == number_default;
 }
